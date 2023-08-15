@@ -44,6 +44,9 @@
             exitToolStripMenuItem = new ToolStripMenuItem();
             showMainWindowToolStripMenuItem = new ToolStripMenuItem();
             hideMainWindowWhenOpeningToolStripMenuItem = new ToolStripMenuItem();
+            startUpToolStripMenuItem = new ToolStripMenuItem();
+            openWhenUserLoginToolStripMenuItem = new ToolStripMenuItem();
+            disableAutoStartToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -148,11 +151,11 @@
             // 
             // iconContextMenuStrip
             // 
-            iconContextMenuStrip.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, showMainWindowToolStripMenuItem, hideMainWindowWhenOpeningToolStripMenuItem });
+            iconContextMenuStrip.Items.AddRange(new ToolStripItem[] { exitToolStripMenuItem, showMainWindowToolStripMenuItem, hideMainWindowWhenOpeningToolStripMenuItem, startUpToolStripMenuItem });
             iconContextMenuStrip.Name = "iconContextMenuStrip";
             iconContextMenuStrip.ShowCheckMargin = true;
             iconContextMenuStrip.ShowImageMargin = false;
-            iconContextMenuStrip.Size = new Size(304, 70);
+            iconContextMenuStrip.Size = new Size(304, 114);
             // 
             // exitToolStripMenuItem
             // 
@@ -176,6 +179,27 @@
             hideMainWindowWhenOpeningToolStripMenuItem.Size = new Size(303, 22);
             hideMainWindowWhenOpeningToolStripMenuItem.Text = "Auto Hide MainWindow When opening";
             hideMainWindowWhenOpeningToolStripMenuItem.Click += HideMainWindowWhenOpeningToolStripMenuItem_Click;
+            // 
+            // startUpToolStripMenuItem
+            // 
+            startUpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openWhenUserLoginToolStripMenuItem, disableAutoStartToolStripMenuItem });
+            startUpToolStripMenuItem.Name = "startUpToolStripMenuItem";
+            startUpToolStripMenuItem.Size = new Size(303, 22);
+            startUpToolStripMenuItem.Text = "StartUp";
+            // 
+            // openWhenUserLoginToolStripMenuItem
+            // 
+            openWhenUserLoginToolStripMenuItem.Name = "openWhenUserLoginToolStripMenuItem";
+            openWhenUserLoginToolStripMenuItem.Size = new Size(204, 22);
+            openWhenUserLoginToolStripMenuItem.Text = "Open when user login";
+            openWhenUserLoginToolStripMenuItem.Click += OpenWhenUserLoginToolStripMenuItem_Click;
+            // 
+            // disableAutoStartToolStripMenuItem
+            // 
+            disableAutoStartToolStripMenuItem.Name = "disableAutoStartToolStripMenuItem";
+            disableAutoStartToolStripMenuItem.Size = new Size(204, 22);
+            disableAutoStartToolStripMenuItem.Text = "Disable auto start";
+            disableAutoStartToolStripMenuItem.Click += DisableAutoStartToolStripMenuItem_Click;
             // 
             // MainWindow
             // 
@@ -213,5 +237,8 @@
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem showMainWindowToolStripMenuItem;
         private ToolStripMenuItem hideMainWindowWhenOpeningToolStripMenuItem;
+        private ToolStripMenuItem startUpToolStripMenuItem;
+        private ToolStripMenuItem openWhenUserLoginToolStripMenuItem;
+        private ToolStripMenuItem disableAutoStartToolStripMenuItem;
     }
 }

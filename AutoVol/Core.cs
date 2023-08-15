@@ -11,18 +11,24 @@ namespace AutoVol
 {
     internal static class Core
     {
+        private static IntPtr lastForegroundWindow = IntPtr.Zero;
         internal static void SetVolume(List<App> apps)
         {
-            IntPtr foregroundWindow=Api.GetForegroundWindow();
-            foreach (App app in apps)
+            IntPtr foregroundWindow = Api.GetForegroundWindow();
+            if (foregroundWindow != lastForegroundWindow)
             {
-                Process[] processes=Process.GetProcessesByName(app.Name);
-                foreach (Process process in processes)
+
+                lastForegroundWindow = foregroundWindow;
+                foreach (App app in apps)
                 {
-                    if(process.MainWindowHandle == foregroundWindow)
+                    Process[] processes = Process.GetProcessesByName(app.Name);
+                    foreach (Process process in processes)
                     {
-                        Api.SetVol(app.VolumePercentage);
-                        return;
+                        if (process.MainWindowHandle == foregroundWindow)
+                        {
+                            Api.SetVol(app.VolumePercentage);
+                            return;
+                        }
                     }
                 }
             }

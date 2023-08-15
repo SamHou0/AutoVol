@@ -106,5 +106,15 @@ namespace AutoVol
             About about = new();
             about.ShowDialog();
         }
+
+        private void OpenWhenUserLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BootHelper.AddBoot();
+        }
+
+        private void DisableAutoStartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BootHelper.RemoveBoot();
+        }
     }
 }
